@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom"
 import Card from "../../../components/Card"
 import CircleChart from "../../../components/CircleChart"
 import { MainFrame } from "../../../components/MainFrame"
@@ -7,7 +8,13 @@ import { MainFrame } from "../../../components/MainFrame"
 export default function DashBoard() {
 
     return (
-        <MainFrame>
+        <MainFrame topBarOptions={
+            [
+                <Link to={'/app/financeiro/'} className="active" >Dashboard</Link>,
+                <Link to={'/app/financeiro/relatorios'} >Relatórios</Link>,
+                <Link to={'/app/financeiro/configuracoes'} >Configurações</Link>,
+            ]
+        }>
                 <div className="row">
                     <div className="col-md-12 col-lg-6 col-xxl-4">
                         <div className="row">

@@ -2,16 +2,27 @@ import ThemeSwitcher from "../ThemeSwither";
 import "./style.css";
 import ButtonLogout from "../ButtonLogout";
 import { Link } from "react-router-dom";
+import { ReactNode } from "react";
 
-export default function TopBar() {
+interface NavPropos {
+    children?: ReactNode[];
+}
 
+export default function TopBar(props: NavPropos) {
 
     return (
         <nav id="top_bar">
+
             <ul id="ul_module_sections" >
-                <li> <Link to={'/app/financeiro/'} className="active" >Dashboard</Link></li>
-                <li> <Link to={'/app/financeiro/relatorios'} >Relatórios</Link></li>
-                <li> <Link to={'/app/financeiro/configuracoes'} >Configurações</Link></li>
+
+                {props.children?.map((el) => {
+                    return (
+                        <li>
+                            {el}
+                        </li>
+                    );
+                })}
+
             </ul>
 
             <div className="flex gap-2">
@@ -19,6 +30,7 @@ export default function TopBar() {
                 <div>Olá, Fulano de tal</div>
                 <ButtonLogout />
             </div>
+
         </nav>
     );
 }
