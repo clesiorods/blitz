@@ -1,15 +1,13 @@
 
-import Card from "../../components/Card"
-import CircleChart from "../../components/CircleChart"
-import Footer from "../../components/Footer"
-import { MainFrame } from "../../components/MainFrame"
+import Card from "../../../components/Card"
+import CircleChart from "../../../components/CircleChart"
+import { MainFrame } from "../../../components/MainFrame"
 
 
 export default function DashBoard() {
 
     return (
         <MainFrame>
-            <main className="p-[18px] w-full ml-0 overflow-y-auto">
                 <div className="row">
                     <div className="col-md-12 col-lg-6 col-xxl-4">
                         <div className="row">
@@ -61,9 +59,6 @@ export default function DashBoard() {
                         </Card>
                     </div>
                 </div>
-
-                <Footer />
-            </main>
         </MainFrame>
     )
 }

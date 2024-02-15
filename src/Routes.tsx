@@ -1,18 +1,19 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import DashBoard from "./pages/DashBoard";
+import DashBoard from "./pages/financial/DashBoard";
+import Reports from "./pages/financial/Reports";
+import Settings from "./pages/financial/Settings";
 // import Teste from "./components/Teste";
 
 export function Router() {
   return (
     <Routes>
-      <Route path="/app/dash-board" element={<DashBoard />} />
-      <Route path="/" element={<Navigate to="/app/dash-board" />} />
-      {/*<Route path="/crm" element={<Crm />} />
-      <Route path="/financeiro" element={<Finance />} />
-      <Route path="/clientes" element={<Customers />} />
-      <Route path="/kanban" element={<Kanban/>} />
-      <Route path="/login" element={<Login />} /> */}
-      {/* <Route path="/teste" element={<Teste />} /> */}
+      <Route path="/" element={<Navigate to="/app/financeiro/dash-board" />} />
+
+      <Route path="/app/financeiro/" element={<DashBoard />} />
+      <Route path="/app/financeiro/dash-board" element={<DashBoard />} />
+      <Route path="/app/financeiro/relatorios" element={<Reports />} />
+      <Route path="/app/financeiro/configuracoes" element={<Settings />} />
+      
     </Routes>
   );
 }
