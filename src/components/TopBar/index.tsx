@@ -2,12 +2,15 @@ import ThemeSwitcher from "../ThemeSwither";
 import "./style.css";
 import ButtonLogout from "../ButtonLogout";
 import { ReactNode } from "react";
+import { useThemeColor } from "../../context/theme.themeswitcher";
 
 interface NavPropos {
     children?: ReactNode[];
 }
 
 export default function TopBar(props: NavPropos) {
+
+    const {handleTheme} = useThemeColor();
 
     return (
         <nav id="top_bar">
@@ -24,9 +27,9 @@ export default function TopBar(props: NavPropos) {
 
             </ul>
 
-            <div className="flex gap-2">
+            <div className="flex gap-2" onClick={() => {handleTheme()}}>
                 <ThemeSwitcher />
-                <div>Olá, Fulano de tal</div>
+                <div className="text-nowrap" >Olá, Fulano de tal</div>
                 <ButtonLogout />
             </div>
 
