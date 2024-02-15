@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import DashBoard from "./pages/financial/DashBoard";
 import Reports from "./pages/financial/Reports";
 import Settings from "./pages/financial/Settings";
+import Registrations from "./pages/registrations/Resume";
 // import Teste from "./components/Teste";
 
 export function Router() {
@@ -14,6 +15,8 @@ export function Router() {
       <Route path="/app/financeiro/relatorios" element={<Reports />} />
       <Route path="/app/financeiro/configuracoes" element={<Settings />} />
       
+      <Route path="/app/cadastros" element={<Registrations />} />
+
     </Routes>
   );
 }

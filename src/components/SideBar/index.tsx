@@ -6,7 +6,9 @@ import IconChackListDual from "../Icons/IconCheckListDual";
 import IconPeopleDual from "../Icons/IconPeopleDual";
 import IconSaleTagDual from "../Icons/IconSaleTagDual";
 import IconWalletDual from "../Icons/IconWalletDual";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import IconCalcDual from "../Icons/IconCalcDual";
+import IconCalendarDual from "../Icons/IconCalendarDual";
 
 
 export default function SideBar() {
@@ -33,6 +35,13 @@ export default function SideBar() {
                     </li>
 
                     <li className="">
+                        <NavLink to={'/app/cadastros'} className="">
+                            <IconChackListDual className="nav_icon" />
+                            <span className='nav_text'> Cadastros </span>
+                        </NavLink>
+                    </li>
+
+                    <li className="">
                         <NavLink to={'/'} className="">
                             <IconSaleTagDual className="nav_icon" />
                             <span className='nav_text'> Vendas </span>
@@ -43,13 +52,6 @@ export default function SideBar() {
                         <NavLink to={'/'} className="">
                             <IconPeopleDual className="nav_icon" />
                             <span className='nav_text'> CRM </span>
-                        </NavLink>
-                    </li>
-
-                    <li className="">
-                        <NavLink to={'/'} className="">
-                            <IconChackListDual className="nav_icon" />
-                            <span className='nav_text'> Minhas Tarefas </span>
                         </NavLink>
                     </li>
 
@@ -76,7 +78,7 @@ export default function SideBar() {
                 <h6 className="mt-4 ml-[32px] text-[10px] opacity-50 header_group">APPS</h6>
 
                 <ul id="ul_modules">
-                    {/* <li className="">
+                    <li className="">
                         <NavLink to={'/'} className="">
                             <IconCalcDual className="nav_icon" />
                             <span className='nav_text'> Calculadora </span>
@@ -88,7 +90,7 @@ export default function SideBar() {
                             <IconCalendarDual className="nav_icon" />
                             <span className='nav_text'> Calendário </span>
                         </NavLink>
-                    </li> */}
+                    </li>
                 </ul>
 
             </nav>
