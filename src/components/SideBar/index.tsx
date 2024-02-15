@@ -6,7 +6,7 @@ import IconChackListDual from "../Icons/IconCheckListDual";
 import IconPeopleDual from "../Icons/IconPeopleDual";
 import IconSaleTagDual from "../Icons/IconSaleTagDual";
 import IconWalletDual from "../Icons/IconWalletDual";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 export default function SideBar() {
@@ -25,48 +25,48 @@ export default function SideBar() {
                 <h6 className="mt-4 ml-[32px] text-[10px] opacity-50 header_group">MÓDULOS</h6>
 
                 <ul id="ul_modules">
-                    <li className="active">
-                        <Link to={'/'} className="">
+                    <li className="">
+                        <NavLink to={'/app/financeiro/'} className="">
                             <IconWalletDual className="nav_icon" />
                             <span className='nav_text'> Financeiro </span>
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li className="">
-                        <Link to={'/'} className="">
+                        <NavLink to={'/'} className="">
                             <IconSaleTagDual className="nav_icon" />
                             <span className='nav_text'> Vendas </span>
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li className="">
-                        <Link to={'/'} className="">
+                        <NavLink to={'/'} className="">
                             <IconPeopleDual className="nav_icon" />
                             <span className='nav_text'> CRM </span>
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li className="">
-                        <Link to={'/'} className="">
+                        <NavLink to={'/'} className="">
                             <IconChackListDual className="nav_icon" />
                             <span className='nav_text'> Minhas Tarefas </span>
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li className="">
-                        <Link to={'/'} className="">
+                        <NavLink to={'/'} className="">
                             <IconChatDual className="nav_icon" />
                             <span className='nav_text'> Chat </span>
-                        </Link>
+                        </NavLink>
                     </li>
                     {/* {modules.map((module) => {
                         if (module.group == 'module') {
                             return (
                                 <li key={module.id} className="">
-                                    <Link to={module.path} className="">
+                                    <NavLink to={module.path} className="">
                                         <IconChatDual className="nav_icon" />
                                         <span className='nav_text'> {module.description} </span>
-                                    </Link>
+                                    </NavLink>
                                 </li>
                             );
                         }
@@ -77,17 +77,17 @@ export default function SideBar() {
 
                 <ul id="ul_modules">
                     {/* <li className="">
-                        <Link to={'/'} className="">
+                        <NavLink to={'/'} className="">
                             <IconCalcDual className="nav_icon" />
                             <span className='nav_text'> Calculadora </span>
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li className="">
-                        <Link to={'/'} className="">
+                        <NavLink to={'/'} className="">
                             <IconCalendarDual className="nav_icon" />
                             <span className='nav_text'> Calendário </span>
-                        </Link>
+                        </NavLink>
                     </li> */}
                 </ul>
 

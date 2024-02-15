@@ -62,7 +62,7 @@ ul#ul_modules > li:hover {
     background: #ffffff12;
 }
     
-ul#ul_modules > li.active {
+ul#ul_modules > li:has(a.active) {
     background: linear-gradient(106deg, rgb(71 36 164) 0%, rgb(102 58 193) 51%, rgb(139 33 202) 100%);
     color: white;
     box-shadow: 0px 2px 12px #454eff21;

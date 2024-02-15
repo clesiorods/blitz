@@ -15,9 +15,9 @@ export default function TopBar(props: NavPropos) {
 
             <ul id="ul_module_sections" >
 
-                {props.children?.map((el) => {
+                {props.children?.map((el, i) => {
                     return (
-                        <li>
+                        <li key={i}>
                             {el}
                         </li>
                     );
