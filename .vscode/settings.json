@@ -1,3 +1,4 @@
 {
-    "workbench.colorTheme": "Omni"
+    "workbench.colorTheme": "Omni",
+    "css.customData": [".vscode/tailwind.json"]
 }
