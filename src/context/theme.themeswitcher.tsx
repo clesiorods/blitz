@@ -14,8 +14,9 @@ export const ThemeColorProvider = ({ children }: any) => {
     const [ThemeColor, setThemeColor] = useState<("light" | "dark")>("light");
 
     const handleTheme = useCallback(() => {
-        localStorage.setItem('color_theme', ThemeColor);
-        setThemeColor(ThemeColor === "dark" ? "light" : "dark");
+        let color = ThemeColor === "dark" ? "light" : "dark";
+        localStorage.setItem('color_theme', color);
+        setThemeColor(color === "dark" ? "dark" : "light");
     }, [ThemeColor])
 
     useEffect(() => {

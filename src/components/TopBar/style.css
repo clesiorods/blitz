@@ -1,4 +1,5 @@
-nav#top_bar > * {
+
+nav#top_bar>* {
     transition: .2s all;
 }
 
@@ -31,18 +32,18 @@ ul#ul_module_sections {
     gap: 5px;
 }
 
-ul#ul_module_sections > li > a{
+ul#ul_module_sections>li>a {
     transition: .2s all;
     padding: 10px 12px;
     border-radius: 6px;
     font-size: 14px;
 }
 
-ul#ul_module_sections > li > a:hover {
+ul#ul_module_sections>li>a:hover {
     background-color: #ffffff0f;
 }
 
-ul#ul_module_sections > li > a.active {
+ul#ul_module_sections>li>a.active {
     background-color: #ffffff1f;
     /* box-shadow: inset 0px 0px 10px -4px rgb(7 0 59 / 11%); */
     color: white;

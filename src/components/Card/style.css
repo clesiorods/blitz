@@ -1,7 +1,18 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 article.card {
     border-radius: 0.625rem;
     padding: 22px 30px;
     margin-bottom: 19px;
+    /* animation: .2s fadeIn ease-out; */
+
     @apply
     shadow-[0px_0px_20px_0px_rgba(76,87,125,0.04)]
     bg-card-light
