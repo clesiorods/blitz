@@ -8,71 +8,125 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
-  --primary-gradient: -webkit-linear-gradient(45deg, #af7cff, #4332c7);
+  --primary-gradient: -webkit-linear-gradient(45deg, #1c25ad, #4e3ec2, #6658d1);
 
-  --loading-gradient-light: linear-gradient(100deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, 0) 60%),  #3b3b4833;
+  --loading-gradient-light: linear-gradient(100deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, .25) 50%, rgba(255, 255, 255, 0) 60%), #3b3b4833;
 
-  --loading-gradient-dark: linear-gradient(100deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, 0) 60%), red;
+  --loading-gradient-dark: linear-gradient(100deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, .25) 50%, rgba(255, 255, 255, 0) 60%), red;
 }
 
 
+.hidden_scroll::-webkit-scrollbar {
+  display: none !important;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(116, 116, 117, 0.219) !important;
+  border-radius: 4px;
+}
+
+main::-webkit-scrollbar-track {
+  margin-top: 14px;
+  margin-bottom: 10px;
+}
+
+.ant-table-content::-webkit-scrollbar-track {
+  display: none !important;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6d6d6d67 !important;
+  border-radius: 4px !important;
+  width: 10px !important;
+  border: 2px solid rgba(187, 187, 187, 0) !important;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6666668e !important;
+}
+
+
+.Toastify__toast {
+  border-radius: 3px !important;
+  border: 1px solid #dfdfdf;
+}
+
+.Toastify__progress-bar--wrp {
+  height: 2px !important;
+}
+
+.Toastify__toast-body {
+  color: #686868;
+}
+
+.ant-table-cell {
+  padding: 10px 16px !important;
+}
+
+.ant-pagination.ant-table-pagination {
+  margin: 12px 0px !important;
+}
 * {
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
-  transition: .25s all;
+  /* transition: .1s all ease-in-out; */
 }
 
 
+div {
+  transition-property: background;
+  transition-duration: 0.3s;
+}
+
 body {
-  @apply 
-    bg-light
-    text-slate-900 
-    
-    dark:bg-dark 
-    dark:text-slate-100 
-    
-    transition-colors duration-200;
+  @apply bg-light text-slate-900 dark:bg-dark dark:text-slate-100 transition-colors duration-200;
 }
 
 
 div.card {
-  @apply
-    bg-slate-100 
-    
-    dark:bg-slate-950 
+  @apply bg-slate-100 dark:bg-slate-950
 }
+
 div.form-group {
   border-color: red;
-  @apply
-    pt-6 
-    w-full     
+  @apply pt-4 w-full
 }
 
 
-input {
+input, select {
   width: 100%;
   padding: 8px 14px;
   height: 42px;
-  @apply 
-    rounded
-    border
-    border-slate-300
-    dark:border-none
-    dark:bg-[#1d2840]
+  /* @apply rounded border border-slate-300 dark:border-[#1d2840] dark:bg-[#1d2840] */
+  @apply rounded border border-slate-300 dark:border-[#1d2840] dark:text-zinc-900 dark:bg-[#e8f0fe]
 }
+
+input.invalid, select.invalid {
+  border-color: red;
+}
+
+input.invalid::placeholder {
+  color: rgba(224, 35, 35, 0.596);
+}
+
+.ant-select-selector {
+  border: none !important;
+}
+
+div.form-group:has(.invalid)>label {
+  @apply text-red-500
+}
+
 input.input_lg {
   height: 48px;
-  @apply
-    px-4
-    py-3 
+  @apply px-4 py-3
 }
 
 
 label {
-  @apply
-    block
-    text-left
-    mb-[4px]
+  @apply block text-left mb-[2px]
 }
 
 
@@ -80,45 +134,56 @@ button {
   transition: .2s all;
   padding: 6px 12px;
   height: 42px;
-  @apply
-    whitespace-nowrap
-    rounded 
+  @apply whitespace-nowrap rounded
 }
+
 button.button_lg {
   height: 48px;
-  @apply
-    py-3
-    px-4 
+  @apply py-3 px-4
 }
+
 button.primary {
-  @apply 
-    bg-violet-500
-    text-zinc-50
-    hover:bg-violet-600
+  background: -webkit-linear-gradient(45deg, #0e19b3, #4e3ec2, #7c6fdf);
 }
+
+button.primary:hover {
+  background: -webkit-linear-gradient(45deg, #0d17a1, #4839b3, #6a5ec2);
+}
+
 button.secondary {
-  @apply 
-  border
-  border-zinc-200
-  dark:border-none
-  bg-zinc-100 
-  text-zinc-800
-  hover:bg-zinc-200
+  color: white;
+  @apply border-none bg-[#999999]
+}
+
+button.secondary:hover {
+  color: white !important;
+ background: #8b8989 !important;
+}
+
+button.light {
+  @apply border border-zinc-200 dark:border-none bg-zinc-100 text-zinc-800 hover:bg-zinc-200
 }
 
 
 a.primary {
   color: #8b5cf6;
 }
+
 a.primary:hover {
   text-decoration: underline;
 }
 
 
+.shadow_wrapper {
+  border-radius: 4px;
+  border: 1px solid white;
+  box-shadow: 0px 0px 18px #0000000f;
+  @apply dark:border-[#1e1e22] dark:shadow-['0px_0px_18px_#ffffff0d']
+}
+
 .subtitle {
   color: #B5B5C3;
-  @apply
-  dark:text-[#575757]
+  @apply dark:text-[#575757]
 }
 
 .bedge {
@@ -135,7 +200,26 @@ a.primary:hover {
 
 
 .text-brand {
-    background: var(--primary-gradient);
-    /* -webkit-background-clip: text; */
-    -webkit-text-fill-color: transparent;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+:where(.css-dev-only-do-not-override-xse705).ant-modal-root .ant-modal-mask {
+  background: rgba(0, 0, 0, 0.25) !important;
+}
+
+@media screen and (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 10px !important;
+    height: 10px !important;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mobile_column {
+    flex-direction: column;
+  }  
 }

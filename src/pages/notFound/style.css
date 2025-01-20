@@ -1,0 +1,86 @@
+@keyframes fadeInLogin {
+  0% {
+    width: 75%;
+    opacity: .5;
+  }
+
+  100% {
+    width: 66.6666%;
+  }
+}
+
+
+@keyframes fadeInLoginBG {
+  0% {
+    width: 104%;
+    opacity: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+
+@media screen and (min-width: 640px) {
+  #login_card {
+    animation: .8s fadeInLogin cubic-bezier(0.3, 0.79, 0.53, 1.01) !important;
+  }
+
+  #bg_login {
+    animation: 1s fadeInLoginBG ease-out !important;
+    max-width: unset;
+    width: 100%;
+  }
+}
+
+
+
+
+.active_error {
+  animation: treme 0.12s;
+  animation-iteration-count: 4;
+}
+
+@keyframes treme {
+  0% {
+    margin-left: 0;
+  }
+
+  25% {
+    margin-left: 5px;
+  }
+
+  50% {
+    margin-left: 0;
+  }
+
+  75% {
+    margin-left: -5px;
+  }
+
+  100% {
+    margin-left: 0;
+  }
+}
+
+
+.btn_login {
+  background: -webkit-linear-gradient(45deg, #0e19b3, #4e3ec2, #7c6fdf);
+  color: white;
+  font-weight: 500;
+}
+
+/* 
+  .btn_login.loading {
+    background: linear-gradient(100deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, .25) 50%, rgba(255, 255, 255, 0) 60%),  rgb(102 58 193);
+    background-size: 200% 100%;
+    background-position-x: 180%;
+    animation: 1s loading ease-in-out infinite;
+  } */
+
+/* @keyframes loading {
+    to {
+      background-position-x: -20%;
+    }
+  } */

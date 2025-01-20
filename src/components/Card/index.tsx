@@ -3,14 +3,15 @@ import { ReactNode } from "react";
 
 
 interface CardProps {
-    children: ReactNode;
+    children?: ReactNode;
     className?: string;
+    style?: React.CSSProperties;
 }
 
 
 export default function Card(props: CardProps) {
     return (
-        <article className={`card ${props.className}`} >
+        <article style={props.style} className={`card ${props.className}`} >
             {props.children}
         </article>
     );

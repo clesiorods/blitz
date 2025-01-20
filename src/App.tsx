@@ -1,21 +1,17 @@
-import React from 'react';
-// import { BrowserRouter } from 'react-router-dom';
-// import { Router } from './Routes';
-// import DashBoard from './pages/DashBoard';
-import { BrowserRouter } from 'react-router-dom';
-import { Router } from './Routes';
-import { SideBarProvider } from './context/responsive.sidebar';
-import { ThemeColorProvider } from './context/theme.themeswitcher';
+
+import 'react-toastify/dist/ReactToastify.css';
+import { Provider as ReduxProvider } from 'react-redux';
+import store from './redux/store';
+import AppContent from './AppContent';
+
 
 function App() {
+
+  
   return (
-    <SideBarProvider>
-      <ThemeColorProvider>
-        <BrowserRouter>
-          <Router />
-        </BrowserRouter>
-      </ThemeColorProvider>
-    </SideBarProvider>
+    <ReduxProvider store={store}>
+      <AppContent />
+    </ReduxProvider>
   );
 }
 

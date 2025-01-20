@@ -1,16 +1,11 @@
 
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
 
-// interface User {
-//     id: string
-//     name: string
-//     email: string
-//     is_admin: number
-// }
 
 interface IResponsiveSideBar {
     handleFixBar: () => void;
     sideBarClass: string;
+    fixedSideBar: boolean;
 }
 
 export const SideBarContext = createContext<IResponsiveSideBar>({} as IResponsiveSideBar);
@@ -74,13 +69,13 @@ export const SideBarProvider = ({ children }: any) => {
 
 
     return (
-        <SideBarContext.Provider value={{ sideBarClass, handleFixBar }} >
+        <SideBarContext.Provider value={{ sideBarClass, handleFixBar, fixedSideBar }} >
             {children}
         </SideBarContext.Provider>
     )
 }
 
-export const useResponsiveClass = () => {
+export const useResponsiveSideBar = () => {
     const context = useContext(SideBarContext)
     return context;
 }

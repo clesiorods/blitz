@@ -8,14 +8,17 @@
 }
 
 article.card {
-    border-radius: 0.625rem;
+    border-radius: 5px;
+    border: 1px solid;
     padding: 22px 30px;
     margin-bottom: 19px;
     /* animation: .2s fadeIn ease-out; */
 
     @apply
+    border-[#f4f4f4]
     shadow-[0px_0px_20px_0px_rgba(76,87,125,0.04)]
     bg-card-light
     dark:bg-card-soft-dark
     dark:text-[#ececec]
+    dark:border-[#14161e]
 }

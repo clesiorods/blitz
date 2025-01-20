@@ -1,4 +1,10 @@
 {
     "workbench.colorTheme": "Omni",
-    "css.customData": [".vscode/tailwind.json"]
+    "css.customData": [
+        ".vscode/tailwind.json"
+    ],
+    "cSpell.words": [
+        "facebook",
+        "iconify"
+    ]
 }

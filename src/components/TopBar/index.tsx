@@ -1,36 +1,27 @@
-import ThemeSwitcher from "../ThemeSwither";
+import ThemeSwitcher from "../ThemeSwitcher";
 import "./style.css";
 import ButtonLogout from "../ButtonLogout";
 import { ReactNode } from "react";
-import { useThemeColor } from "../../context/theme.themeswitcher";
+import { useAuth } from "../../context/AuthContext";
 
-interface NavPropos {
-    children?: ReactNode[];
+interface NavProps {
+    children?: ReactNode;
 }
 
-export default function TopBar(props: NavPropos) {
+export default function TopBar(props: NavProps) {
 
-    const {handleTheme} = useThemeColor();
-
+    const {authState} = useAuth();
+    
     return (
-        <nav id="top_bar">
-
+        <nav id="top_bar" className="hidden_scroll">
             <ul id="ul_module_sections" >
-
-                {props.children?.map((el, i) => {
-                    return (
-                        <li key={i}>
-                            {el}
-                        </li>
-                    );
-                })}
-
+                {props.children}
             </ul>
 
-            <div className="flex gap-2" onClick={() => {handleTheme()}}>
+            <div className="flex gap-2 m_hidden">
                 <ThemeSwitcher />
-                <div className="text-nowrap" >Olá, Fulano de tal</div>
-                <ButtonLogout />
+                <div className="text-nowrap mx-3" >Olá, {authState.usuario?.nome.split(' ')[0]}</div>
+                <ButtonLogout className="" />
             </div>
 
         </nav>
